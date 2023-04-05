@@ -19,6 +19,7 @@ obj/
 *.vsp
 *.psessproj
 *.sln.docstates
+*.vsconfig
 
 # Unity
 Library/
