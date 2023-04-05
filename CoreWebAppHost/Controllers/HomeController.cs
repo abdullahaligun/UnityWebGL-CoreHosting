@@ -18,10 +18,16 @@ namespace CoreWebAppHost.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Unity()
         {
             return View();
         }
+        
+        public IActionResult UnityIframe()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

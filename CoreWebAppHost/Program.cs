@@ -18,11 +18,28 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/UnityBuild/Build")),
+    RequestPath = "/UnityBuild/Build"
+});
+// compression disabled
+// add mime for .data files
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/UnityBuild/Build")),
+    RequestPath = "/UnityBuild/Build",
+    ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>
+    {
+        { ".data", "application/octet-stream" }
+})
+});
+
 // add mime for .unityweb files
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/UnityWebGL/Build")),
-    RequestPath = "/UnityWebGL/Build",
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/UnityBuild/Build")),
+    RequestPath = "/UnityBuild/Build",
     ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>
     {
         { ".unityweb", "application/octet-stream" }
