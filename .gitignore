@@ -1,0 +1,46 @@
+# .NET Core
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.user
+*.vscode
+
+# Visual Studio
+.vs/
+*.suo
+*.cache
+*.log
+*.vspscc
+*.user
+*.vssscc
+*.psess
+*.vsp
+*.psessproj
+*.sln.docstates
+
+# Unity
+Library/
+Temp/
+Build/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.userprefs
+*.dll
+*.pdb
+*.csproj
+*.pidb
+*.sln
+*.user
+*.userprefs
+*.unityproj
+*.apk
+*.unitypackage
+*.DS_Store
+
+# Others
+Thumbs.db
+.DS_Store
